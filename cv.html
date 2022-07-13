@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CV</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<script>
+			theme = "light"
+			lang = "fr"
+
+			function set_theme(new_theme) {
+				theme = new_theme
+				document.getElementById("pdfframe").src = "files/cv/cv_" + theme + "_" + lang + ".pdf"
+			}
+
+			function set_lang(new_lang) {
+				lang = new_lang
+				document.getElementById("pdfframe").src = "files/cv/cv_" + theme + "_" + lang + ".pdf"
+
+				if (lang === "fr") {
+					document.getElementById("langlabel").textContent = "Langue : "
+					document.getElementById("themelabel").textContent = "Thème : "
+					document.getElementById("themelightlabel").textContent = "Clair"
+					document.getElementById("themedarklabel").textContent = "Sombre"
+					document.getElementById("themecontrastedlabel").textContent = "Contrasté"
+				}
+				else {
+					document.getElementById("langlabel").textContent = "Language: "
+					document.getElementById("themelabel").textContent = "Theme: "
+					document.getElementById("themelightlabel").textContent = "Light"
+					document.getElementById("themedarklabel").textContent = "Dark"
+					document.getElementById("themecontrastedlabel").textContent = "Contrasted"
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="navbar">
+			<ul class="nav-list">
+				<li class="nav-item-left"><a class="nav-item-content nav-link nav-title" href="index.html">RENAUDINEAU Adrien</a></li>
+				<li class="nav-item-left"><a class="nav-item-content nav-link nav-active" href="" >About</a></li>
+				<li class="nav-item-left"><a class="nav-item-content nav-link" href="">Contact</a></li>
+				<li class="nav-item-left"><span class="nav-item-content nav-text">-----</span></li>
+				<li class="nav-item-left">
+					<div class="nav-item-content nav-text">
+					<span>Langue : </span>
+					<input type="radio" id="langfrench" name="lang" value="French" checked="checked" onclick=set_lang("fr")>
+					<label for="langfrench">Français</label>
+					<input type="radio" id="langenglish" name="lang" value="English" onclick=set_lang("en")>
+					<label for="langenglish">English</label>
+					</div>
+				</li>
+				<li class="nav-item-left">
+					<div class="nav-item-content nav-text">
+					<span>Thème :</span> 
+					<input type="radio" id="themelight" name="theme" value="LightTheme" checked="checked" onclick=set_theme("light")>
+					<label for="themelight" id="themelightlabel" >Clair</label>
+					<input type="radio" id="themedark" name="theme" value="DarkTheme" onclick=set_theme("dark")>
+					<label for="themedark"  id="themedarklabel" >Sombre</label>
+					<input type="radio" id="themecontrasted" name="theme" value="ContrastedTheme" onclick=set_theme("contrasted")>
+					<label for="themecontrasted" id="themecontrastedlabel">Contrasté</label>
+					</div>
+				</li>
+				<li class="nav-item-right"><span class="nav-item-content nav-text" id="moto">MOTO here</span></li>
+			</ul>
+		</div>
+
+		<div id="main-body">
+			<iframe id="pdfframe" src="files/cv/cv_light_fr.pdf"></iframe>
+		</div>
+	</body>
+</html>

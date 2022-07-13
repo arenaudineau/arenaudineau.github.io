@@ -3,28 +3,47 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Site</title>
-		
-		<style>
-			body {
-				background-color: #646464;
-				color: #C8C8C8;
-			}
-			
-			#main-body {
-				background-color: #1E1E1E;
-				color: #C8C8C8;
-				
-				width: 80%;
-				height: 80vh;
-				margin-left: auto;
-				margin-right: auto;
-				padding: 5%;
-			}
-		</style>
+		<link rel="stylesheet" href="styles/main.css">
+
 	</head>
 	<body>
+		<div id="navbar">
+			<ul class="nav-list">
+				<li class="nav-item-left"><a class="nav-item-content nav-link nav-title nav-active" href="index.html">RENAUDINEAU Adrien</a></li>
+				<li class="nav-item-left"><a class="nav-item-content nav-link" href="">About</a></li>
+				<li class="nav-item-left"><a class="nav-item-content nav-link" href="">Contact</a></li>
+				<li class="nav-item-right"><span class="nav-item-content nav-text" id="moto">MOTO here</span></li>
+			</ul>
+		</div>
 		<div id="main-body">
 			<p>Hello, World!</p>
+			<p>🔧 En construction</p>
+
+			<h2>Académique</h2>
+			<ul>
+				<li><a href="cv.html" class="web-link">CV</a></li>
+				<li>
+					Rapports
+					<ul>
+						<li><a href="" class="web-link">Stage L3</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>Simulations Web</h2>
+			<ul>
+				<li><a href="apps/emsim/index.html" class="web-link">Champ électrostatique</a></li>
+				<li><a href="apps/drude/index.html" class="web-link">Modèle de Drude</a></li>
+				<li><a href="apps/tidal/index.html" class="web-link">Effet de marée</a></li>
+			</ul>
+
+			<h2>Projets</h2>
+			<ul>
+				<li><a href="https://github.com/ardakaniz/Sinai       " class="web-link">Sinai</a>, simulation du billard de Sinai, “démontrant” l’hypothèse d’ergodicité de la physique statistique.</li>
+				<li><a href="https://github.com/ardakaniz/PathIntegral" class="web-link">Path Integral</a>, simulation de l’évolution d’une fonction d’onde pour un potentiel quelconque, en utilisant les propagateurs de Feynman.</li>
+				<li><a href="https://github.com/ardakaniz/BFComputer  " class="web-link">BFComputer</a>, un ordinateur qui se programme avec du <a href="https://fr.wikipedia.org/wiki/Brainfuck" class="web-link">Brainf*ck</a> !</li>
+				<li><a href="https://github.com/ardakaniz/RPiSequencer" class="web-link">RPiSequencer</a>, un séquenceur pour mon synthé fonctionnant sur un RPi avec une interface sur smartphone.</li>
+			</ul>
 		</div>
 	</body>
 </html>

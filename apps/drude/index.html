@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Drude</title>
+
+		<link rel="stylesheet" href="../../styles/main.css">
+		<script src="../common/scripts/p5.min.js"></script>
+		<script src="scripts/sim.js"></script>
+		<style>
+			h1 { font-size: large; };
+			body {margin: 1; height: 100%; overflow: hidden}
+
+			#canvas-container {
+				min-height: 80vh;
+				min-height: -webkit-fill-available;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+			}
+
+			#canvas {
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="navbar">
+			<ul class="nav-list">
+				<li class="nav-item-left"><a class="nav-item-content nav-link nav-title nav-active" href="../../index.html">RENAUDINEAU Adrien</a></li>
+				<li class="nav-item-left"><a class="nav-item-content nav-link" href="">About</a></li>
+				<li class="nav-item-left"><a class="nav-item-content nav-link" href="">Contact</a></li>
+				<li class="nav-item-right"><span class="nav-item-content nav-text" id="moto">MOTO here</span></li>
+			</ul>
+		</div>
+
+		<div id="main-body">
+			<h1>Simulation du modèle de Drude</h1>
+			<p>
+			Appuyez sur la touche 'E' pour faire apparaitre l'action d'un champ électrique.</br>
+			<label>Nombre d'électron: </label>
+			<input id="elec_count" type='number' min="1" value="100">
+			</p>
+			
+			<div id="canvas-container">
+				<div id="canvas"></div>
+			</div>
+		</div>
+
+	</body>
+</html>
