@@ -17,6 +17,7 @@
 				lang = new_lang
 				document.getElementById("pdfframe").src = "files/cv/cv_" + theme + "_" + lang + ".pdf"
 
+				
 				if (lang === "fr") {
 					document.getElementById("langlabel").textContent = "Langue : "
 					document.getElementById("themelabel").textContent = "Thème : "
@@ -45,7 +46,7 @@
 				<li class="nav-item-left"><span class="nav-item-content nav-text">-----</span></li>
 				<li class="nav-item-left">
 					<div class="nav-item-content nav-text">
-					<span>Langue : </span>
+					<span id="langlabel">Langue : </span>
 					<input type="radio" id="langfrench" name="lang" value="French" checked="checked" onclick=set_lang("fr")>
 					<label for="langfrench">Français</label>
 					<input type="radio" id="langenglish" name="lang" value="English" onclick=set_lang("en")>
@@ -54,7 +55,7 @@
 				</li>
 				<li class="nav-item-left">
 					<div class="nav-item-content nav-text">
-					<span>Thème :</span> 
+					<span id="themelabel">Thème :</span> 
 					<input type="radio" id="themelight" name="theme" value="LightTheme" checked="checked" onclick=set_theme("light")>
 					<label for="themelight" id="themelightlabel" >Clair</label>
 					<input type="radio" id="themedark" name="theme" value="DarkTheme" onclick=set_theme("dark")>
