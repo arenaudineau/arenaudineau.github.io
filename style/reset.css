@@ -93,6 +93,7 @@ video {
     /* added by me */
     text-decoration: none;
     vertical-align: baseline;
+    box-sizing: content-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -111,7 +112,7 @@ section {
 }
 
 body {
-    line-height: 1;
+    line-height: 1.2;
 }
 
 ol,
