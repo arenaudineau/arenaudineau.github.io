@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../style/post.css" type="text/css" media="screen" />
 
         <script>
-          document.addEventListener("DOMContentLoaded", function() {
+          document.addEventListener("DOMContentLoaded", () => {
             const date = new Date();
             date.setTime(Date.parse("2023-09-26 16:06:12.0843255 +0000".replace(" ", "T").replace(" ", "")));
             document.getElementById("timestamp").innerText = date.getUTCDate() + ' ' + ["Jan","Feb","Mar","Apr","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][date.getUTCMonth()-1] + '. ' + date.getUTCFullYear();
@@ -20,8 +20,8 @@
     </head>
     <body>
       <header>
-        <a href=".."><svg style="margin-top: 0.1pt;" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /> </svg></a> | Article published on the <span id="timestamp" style="text-decoration: underline;"></span>
-        <div style="margin-top: 0.75em; border-bottom-style: solid; border-width: 2pt;"> </div>
+        <a href=".."><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 12" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /> </svg></a> | Article published on the <span id="timestamp" style="text-decoration: underline;"></span>
+        <div style="margin-top: 0.75em; border-bottom-style: solid; border-width: 2pt;"></div>
       </header>
 
       <h1 style="text-decoration:underline;">Sample Blog Article</h1>
