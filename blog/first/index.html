@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../style/reset.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="../style/fonts/fonts.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code" />
-        <link rel="stylesheet" href="../style/main.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="../style/post.css" type="text/css" media="screen" />
+<html lang="en">
 
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            const date = new Date();
-            date.setTime(Date.parse("2023-09-26 16:06:12.0843255 +0000".replace(" ", "T").replace(" ", "")));
-            document.getElementById("timestamp").innerText = date.getUTCDate() + ' ' + ["Jan","Feb","Mar","Apr","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][date.getUTCMonth()-1] + '. ' + date.getUTCFullYear();
-          });
-        </script>
-      
-        <title>Sample Blog Article</title>        
-    </head>
-    <body>
-      <header>
-        <a href=".."><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 12" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /> </svg></a> | Article published on the <span id="timestamp" style="text-decoration: underline;"></span>
-        <div style="margin-top: 0.75em; border-bottom-style: solid; border-width: 2pt;"></div>
-      </header>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/reset.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/fonts/fonts.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/main.css" type="text/css" media="screen" />
 
-      <h1 style="text-decoration:underline;">Sample Blog Article</h1>
-      <p>Special quantum hardware such as D-Wave’s quantum annealer has been developed that demonstrates effectiveness in solving targeted problems like Max-SAT and Max Cut (see e.g. [31]). Nurse-scheduling problem and flight gate assignment problem have also been solved in [14] and [24] respectively. Some other interesting problems have been formulated as a QUBO as well. In [22], the problem of estimating the density of states of Boolean satisfiability problem is formulated as a QUBO. On a related front, technology companies have developed fast QUBO solvers (QS) such as Alpha-QUBO [10] (a software solver) and Fujitsu’s Digital Annealer (DA) [3], a CMOS machine with specialized hardware architecture. These QUBO solvers face several challenges including hardware limitations and no guarantee of solution quality.</p>
+  
+<link rel="stylesheet" href="https://arenaudineau.github.io/css/post.css" type="text/css" media="screen" />
+
+<title> Sample Blog Article</title>
+
+</head>
+
+<body>
+  <div>
+    
+<header>
+    <a href="https://arenaudineau.github.io/."><svg xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 12"
+            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
+        </svg></a>
+    | Article published on the <span style="text-decoration: underline;">2023-09-29</span>
+    <div style="margin-top: 0.75em; border-bottom-style: solid; border-width: 2pt;"></div>
+</header>
+
+<h1 style="text-decoration:underline;">Sample Blog Article</h1>
+<p>Special quantum hardware such as D-Wave’s quantum annealer has been developed that demonstrates effectiveness in solving targeted problems like Max-SAT and Max Cut (see e.g. [31]). Nurse-scheduling problem and flight gate assignment problem have also been solved in [14] and [24] respectively. Some other interesting problems have been formulated as a QUBO as well. In [22], the problem of estimating the density of states of Boolean satisfiability problem is formulated as a QUBO. On a related front, technology companies have developed fast QUBO solvers (QS) such as Alpha-QUBO [10] (a software solver) and Fujitsu’s Digital Annealer (DA) [3], a CMOS machine with specialized hardware architecture. These QUBO solvers face several challenges including hardware limitations and no guarantee of solution quality.</p>
 <p>Currently, these solvers assume that the given problem is unconstrained, although it has been proven in [18] that a constrained problem such as those stated in a typical integer programming (IP) can be converted to an unconstrained problem using a penalty method [23]. The penalty method achieves this by ensuring that an infeasible solution is not the optimal solution. More details on how to convert a quadratic binary optimization problem with permutation constraints to a QUBO will be covered in the background
 section.</p>
 <p>In this paper, we focus on permutation-based combinatorial optimization problems, i.e. problems whose constraints are permutation
@@ -72,15 +76,17 @@ approach can be used to decompose the problem into sub-QUBOs.</p>
 <p>GOH Siong Thye; BO, Jianyuan; GOPALAKRISHNAN, Sabrish; and LAU, Hoong Chuin. Techniques to
 enhance a QUBO solver for permutation-based combinatorial optimization. (2022).</p>
 <p>There is some syntax highlighting also:</p>
-<pre style="background-color:#2b303b;">
-<code><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">numpy </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">np
-</span><span style="color:#b48ead;">import </span><span style="color:#c0c5ce;">matplotlib.pyplot </span><span style="color:#b48ead;">as </span><span style="color:#c0c5ce;">plt
-</span><span style="color:#c0c5ce;">
-</span><span style="color:#c0c5ce;">xs = np.</span><span style="color:#8fa1b3;">linsapce</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">2 </span><span style="color:#c0c5ce;">* np.pi)
-</span><span style="color:#c0c5ce;">ys = np.</span><span style="color:#8fa1b3;">sin</span><span style="color:#c0c5ce;">(xs)
-</span><span style="color:#c0c5ce;">
-</span><span style="color:#c0c5ce;">plt.</span><span style="color:#8fa1b3;">plot</span><span style="color:#c0c5ce;">(xs, ys)
+<pre data-lang="py" style="background-color:#2b303b;color:#c0c5ce;" class="language-py "><code class="language-py" data-lang="py"><span style="color:#b48ead;">import </span><span>numpy </span><span style="color:#b48ead;">as </span><span>np
+</span><span style="color:#b48ead;">import </span><span>matplotlib.pyplot </span><span style="color:#b48ead;">as </span><span>plt
+</span><span>
+</span><span>xs = np.</span><span style="color:#bf616a;">linsapce</span><span>(</span><span style="color:#d08770;">0</span><span>, </span><span style="color:#d08770;">2 </span><span>* np.pi)
+</span><span>ys = np.</span><span style="color:#bf616a;">sin</span><span>(xs)
+</span><span>
+</span><span>plt.</span><span style="color:#bf616a;">plot</span><span>(xs, ys)
 </span></code></pre>
 
-  </body>
+
+  </div>
+</body>
+
 </html>
