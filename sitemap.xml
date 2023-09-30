@@ -4,10 +4,23 @@
         <loc>https://arenaudineau.github.io/</loc>
     </url>
     <url>
+        <loc>https://arenaudineau.github.io/apps/</loc>
+    </url>
+    <url>
+        <loc>https://arenaudineau.github.io/apps/drude/</loc>
+    </url>
+    <url>
+        <loc>https://arenaudineau.github.io/apps/electrostatic-sim/</loc>
+    </url>
+    <url>
         <loc>https://arenaudineau.github.io/blog/</loc>
     </url>
     <url>
         <loc>https://arenaudineau.github.io/blog/first/</loc>
+        <lastmod>2023-09-29</lastmod>
+    </url>
+    <url>
+        <loc>https://arenaudineau.github.io/blog/second/</loc>
         <lastmod>2023-09-29</lastmod>
     </url>
 </urlset>

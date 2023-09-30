@@ -1,8 +1,33 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: 'Linux Libertine', 'Georgia', sans-serif;
+    margin: 0;
 
-    margin: 5% 25%;
     background-color: #90a7be;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin: 2.5% 25%;
+}
+
+header {
+    margin: 0 25%;
+    position: fixed;
+    background-color: #90a7be;
+    width: 50%;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    padding-bottom: 0.5em;
 }
 
 pre {
@@ -16,21 +41,6 @@ h1 {
     font-size: 2em;
 }
 
-/* .two-cols {
-    column-count: 2;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; *
-
-    column-gap: 5%;
-    text-align: justify;
-    /* max-height: 70vh; *
-}
-
-.col-span {
-    column-span: all;
-} */
-
 a {
     color: darkslateblue;
 }
@@ -39,11 +49,21 @@ a:hover {
     color: darkslategray;
 }
 
+.post-title {
+    margin: 0.33em 0em;
+    padding: 0;
+}
+
 .post-descr {
     padding-left: 10pt;
 }
 
-code {
+.post-descr>* {
+    margin: 0;
+}
+
+code,
+kbd {
     font-family: 'Fira Code', 'Courier New',
         Courier,
         monospace;
