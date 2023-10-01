@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/reset.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/fonts/fonts.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/main.css" type="text/css" media="screen" />
+
+  
+<link rel="stylesheet" href="https://arenaudineau.github.io/css/post.css" type="text/css" media="screen" />
+
+<title> Factober</title>
+
+
+</head>
+
+<body>
+  <header>
+<a href="https://arenaudineau.github.io/."><svg xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 12" stroke-width="2"
+        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
+    </svg></a>
+| <span>Factober</span>
+| <span style="font-size: 0.9rem;">
+    <span style="text-decoration: underline;">2023-10-01</span>
+
+    
+</span>
+<div style="margin-top: 0.25rem; border-bottom-style: solid; border-width: 1.5pt;">
+</div>
+ </header>
+  <main>
+    
+<h1 style="text-decoration:underline;">Factober</h1>
+<p>So it's October, and not only it is the month of Oktoberfest, but also that of Inktober.
+The concept of Inktober is the following: there is an official list of words - one per day - (although anyone can create its own) and artists who want to can make a drawing about this word. The idea is to force themselves to draw each day to improve their skills (and surely also for fun).</p>
+<figure>
+<img style="display: block; width: 100%;" src="https://images.squarespace-cdn.com/content/v1/5af1bd791aef1d143f85e67e/79397039-375a-44d9-bd12-e5a1fe566c4f/2023promptlist.jpg" alt="Official Inktober 2023 Prompt List" />
+<figcaption class="no-before">Official Inktober 2023 Prompt List</figcaption>
+</figure>
+<p>I don't know how to draw. However, I do like science and learning stuff. Also, I need to practice writing for my upcoming Ph.D.
+Thus I came up with an idea: Factober.</p>
+<p>I will every day and for each word present a fact or answer a question related to it, in the style of scientific writing.<br />
+Note that I am a physics student and because of the diversity of words, I may find myself writing about things I am learning on-the-fly and thus may contain some inaccuracies.<br />
+<span style="font-size: 0.8em;">Moreover, there is a non-zero probability that I give up at some point.</span></p>
+<h3>Facts</h3>
+<ul style="margin-top:0; display: grid; grid-template-columns: repeat(3, 1fr);">
+<li><a href="#day-1">1. Dream</a></li>
+<!-- <li><a href="#day-2">2. Spiders</a></li>
+<li><a href="#day-3">3. Path</a></li>
+<li><a href="#day-4">4. Dodge</a></li>
+<li><a href="#day-5">5. Map</a></li>
+<li><a href="#day-6">6. Golden</a></li>
+<li><a href="#day-7">7. Drip</a></li>
+<li><a href="#day-8">8. Toad</a></li> -->
+</ul>
+<hr>
+<h3 id="day-1">1. Dream</h3>
+<div style="margin-top: 0; font-style: italic; font-size: 0.9em;">Will Androids Dream of Electric Sheep?</div>
+<p>Sleep have been shown to be essential for the brain to function. The litterature reports a deterioration of performances in many different cognitive tasks during sleep deprivation [<a href="#R01">1</a>].</p>
+<p>In particular, sleep plays an important role for learning and for the memory [<a href="#R02">2</a>,<a href="#R03">3</a>].<br />
+What I (briefly) want to focus on here is more specifically the role of <em>dreaming</em> for thoses tasks.</p>
+<!-- Dreaming could play a role in memory *consolidation* or memory *reconsolidation*, or both: the distinction between both is unclear. Consolidation is the process by which a memory is stabilized into the long-term memory after its acquisition, while reconsolidation is the process by which memories initialy consolidated are changed with new learning input.   
+However, [<a href="#R04">4</a>] states that both may be the same mechanism, as learning something new (= consolidation) must also involve reorganizing previous knowledge (= reconsolidation).   
+The distinction is still an area of ongoing research: for a more detailed discussion on that topic, see [<a href="#R05">5</a>]. -->
+<p>An idea from F. Crick and G. Mitchison in 1983 is that dreaming is a way for the brain to explicitely <em>unlearn</em> (and not just <em>forget</em>) undesirable memories, motivated by the fact that the dreams are remembered only when we wake up in the middle ; and that we need effort in order not to forget it [<a href="#R04">4</a>].</p>
+<p>This idea echoes a recent learning algorithm for Artificial Neural Networks developped by G. Hinton: the Forward-Forward Algorithm [<a href="#R05">5</a>].<br />
+The common algorithm to make neural networks learn is Backpropagation: the network is fed with some input, and the output is compared to the expected output. The error computed goes backward in the network to update each neuron's weights according to the error's derivative in order to minimize it.<br />
+However, the signal propagating backward makes this algorithm not biologically plausible: we do not observe anything alike in the brain.</p>
+<p>What proposes the Forward-Forward algorithm is to propagate the signal forward, with <em>positive</em> input data, which would typically represent the data we process when awake ; and then propagate the signal forward again, <strong>but</strong> with <em>negative</em> data, which would typically represent the data we create and process when dreaming.</p>
+<p>But why would we seek to find a bio-plausible learning algorithm, when we already have one which obviously is powerful (c.f. ChatGPT and other LLMs)?<br />
+Because the brain is a very energy-efficient machine: it consumes only about 20W while training those LLMs required supercomputer for a total energy of 1000kW.h, that is, the energy the brain uses in six years [<a href="#R06">6</a>].</p>
+<p>However, the theory of unlearning has not proved to be what really happens and other theories exist: more research is needed to better understand our brain.<br />
+This is not because a theory may be wrong that brain-inspired computing must not consider it: the power of current AIs relies on over-simplified model of our neurons and on an invalid learning process. </p>
+<p>Who knows, maybe the future AIs will dream of electric sheep?</p>
+<hr>
+<h3 id="references">References</h3>
+<ul style="margin-top: 0.5em;">
+<li id="R01">[1] Alhola, P., & Polo-Kantola, P. (2007). Sleep deprivation: Impact on cognitive performance. Neuropsychiatric disease and treatment, 3(5), 553–567. </a>
+<li id="R02">[2] Diekelmann, S., & Born, J. (2010). The memory function of sleep. Nature Reviews Neuroscience, 11(2), 114-126.</li>
+<li id="R03">[3] Maquet, P., Schwartz, S., Passingham, R., & Frith, C. (2003). Sleep-related consolidation of a visuomotor skill: brain mechanisms as assessed by functional magnetic resonance imaging. Journal of Neuroscience, 23(4), 1432-1440.</li>
+<!-- <li id="R04">[4] McKenzie, S., & Eichenbaum, H. (2011). Consolidation and reconsolidation: two lives of memories?. Neuron, 71(2), 224–233. https://doi.org/10.1016/j.neuron.2011.06.037</li>
+<li id="R05">[5] Dudai, Y. (2012). The restless engram: consolidations never end. Annual review of neuroscience, 35, 227-247.</li>
+<li id="R06">[6] Zhao, H., Li, D., & Li, X. (2018). Relationship between dreaming and memory reconsolidation. Brain Science Advances, 4(2), 118-130.</li> -->
+<li id="R04">[4] Crick, F., & Mitchison, G. (1983). The function of dream sleep. Nature, 304(5922), 111-114.</li>
+<li id="R05">[5] Hinton, G. (2022). The forward-forward algorithm: Some preliminary investigations. arXiv preprint arXiv:2212.13345.</li>
+<li id="R06">[6] Marković, D., Mizrahi, A., Querlioz, D., & Grollier, J. (2020). Physics for neuromorphic computing. Nature Reviews Physics, 2(9), 499-510.</li>
+<!-- <li id="R07">[7]Hudachek, L., & Wamsley, E. J. (2023). A Meta-Analysis of the Relation between Dream Content and Memory Consolidation. Sleep, zsad111.</li>
+<li id="R08">[8] Nielsen T. A. (2000). A review of mentation in REM and NREM sleep: "covert" REM sleep as a possible reconciliation of two opposing models. The Behavioral and brain sciences, 23(6), 851–1121.</li> -->
+</ul>
+
+  </main>
+
+  
+<footer>
+  I need to find what information to write here
+</footer>
+
+</body>
+
+</html>
