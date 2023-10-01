@@ -72,8 +72,8 @@ The distinction is still an area of ongoing research: for a more detailed discus
 The common algorithm to make neural networks learn is Backpropagation: the network is fed with some input, and the output is compared to the expected output. The error computed goes backward in the network to update each neuron's weights according to the error's derivative in order to minimize it.<br />
 However, the signal propagating backward makes this algorithm not biologically plausible: we do not observe anything alike in the brain.</p>
 <p>What proposes the Forward-Forward algorithm is to propagate the signal forward, with <em>positive</em> input data, which would typically represent the data we process when awake ; and then propagate the signal forward again, <strong>but</strong> with <em>negative</em> data, which would typically represent the data we create and process when dreaming.</p>
-<p>But why would we seek to find a bio-plausible learning algorithm, when we already have one which obviously is powerful (c.f. ChatGPT and other LLMs)?<br />
-Because the brain is a very energy-efficient machine: it consumes only about 20W while training those LLMs required supercomputer for a total energy of 1000kW.h, that is, the energy the brain uses in six years [<a href="#R06">6</a>].</p>
+<p>But why would we look for a bio-plausible learning algorithm, when we already have one which is obviously powerful (c.f. ChatGPT and other LLMs)?<br />
+Because the brain is a very energy-efficient machine: it consumes only about 20W while training those LLMs required supercomputer for a total energy of 1000kWh, that is, the energy the brain uses in six years [<a href="#R06">6</a>].</p>
 <p>However, the theory of unlearning has not proved to be what really happens and other theories exist: more research is needed to better understand our brain.<br />
 This is not because a theory may be wrong that brain-inspired computing must not consider it: the power of current AIs relies on an over-simplified model of our neurons and on an invalid learning process. </p>
 <p>Who knows, maybe the future AIs will dream of electric sheep?</p>
