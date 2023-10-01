@@ -1,3 +1,21 @@
+:root {
+    --bg-color: #90a7be;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --margins: 25%;
+        --ul-padding: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --margins: 10%;
+        --ul-padding: 20px;
+    }
+}
+
 html,
 body {
     height: 100%;
@@ -7,27 +25,49 @@ body {
     font-family: 'Linux Libertine', 'Georgia', sans-serif;
     margin: 0;
 
-    background-color: #90a7be;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
 }
 
 main {
     flex: 1;
-    margin: 2.5% 25%;
+    margin: calc(max(25px, var(--margins) / 10)) var(--margins);
 }
 
 header {
-    margin: 0 25%;
+    margin: 0 var(--margins);
     position: fixed;
-    background-color: #90a7be;
-    width: 50%;
+    background-color: var(--bg-color);
+    width: calc(100% - var(--margins) * 2);
 }
 
 footer {
     text-align: center;
-    font-size: 0.8em;
-    padding-bottom: 0.5em;
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+}
+
+figure {
+    padding: 0 calc(var(--margins));
+}
+
+figcaption:not(.no-before)::before {
+    content: "Figure ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    padding-left: var(--ul-padding);
 }
 
 pre {
@@ -38,7 +78,7 @@ pre {
 
 h1 {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 a {
@@ -49,8 +89,12 @@ a:hover {
     color: darkslategray;
 }
 
+h3 {
+    margin-bottom: 0;
+}
+
 .post-title {
-    margin: 0.33em 0em;
+    margin: 0.33rem 0;
     padding: 0;
 }
 
