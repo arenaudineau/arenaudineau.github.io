@@ -14,6 +14,9 @@
 
 <title> Factober</title>
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 </head>
 
@@ -28,6 +31,8 @@
 | <span style="font-size: 0.9rem;">
     <span style="text-decoration: underline;">2023-10-01</span>
 
+    
+    (Modified: <span style="text-decoration: underline;">2023-10-02</span>)
     
 </span>
 <div style="margin-top: 0.25rem; border-bottom-style: solid; border-width: 1.5pt;">
@@ -49,17 +54,17 @@ Note that I am a physics student and because of the diversity of words, I may fi
 <span style="font-size: 0.8em;">Moreover, there is a non-zero probability that I give up at some point.</span></p>
 <h3>Facts</h3>
 <ul style="margin-top:0; display: grid; grid-template-columns: repeat(3, 1fr);">
-<li><a href="#day-1">1. Dream</a></li>
-<!-- <li><a href="#day-2">2. Spiders</a></li>
-<li><a href="#day-3">3. Path</a></li>
+<li><a href="#D1">1. Dream</a></li>
+<li><a href="#D2">2. Spiders</a></li>
+<!-- <li><a href="#day-3">3. Path</a></li>
 <li><a href="#day-4">4. Dodge</a></li>
 <li><a href="#day-5">5. Map</a></li>
 <li><a href="#day-6">6. Golden</a></li>
 <li><a href="#day-7">7. Drip</a></li>
 <li><a href="#day-8">8. Toad</a></li> -->
 </ul>
-<hr>
-<h3 id="day-1">1. Dream</h3>
+<hr id="D1" style="margin-bottom: 30px;">
+<h3>1. Dream</h3>
 <div style="margin-top: 0; font-style: italic; font-size: 0.9em;">Will Androids Dream of Electric Sheep?</div>
 <p>Sleep have been shown to be essential for the brain to function. The litterature reports a deterioration of performances in many different cognitive tasks during sleep deprivation [<a href="#R01">1</a>].</p>
 <p>In particular, sleep plays an important role for learning and for the memory [<a href="#R02">2</a>,<a href="#R03">3</a>].<br />
@@ -77,6 +82,33 @@ Because the brain is a very energy-efficient machine: it consumes only about 20W
 <p>However, the theory of unlearning has not proved to be what really happens and other theories exist: more research is needed to better understand our brain.<br />
 This is not because a theory may be wrong that brain-inspired computing must not consider it: the power of current AIs relies on an over-simplified model of our neurons and on an invalid learning process. </p>
 <p>Who knows, maybe the future AIs will dream of electric sheep?</p>
+<hr id="D2" style="margin-bottom: 30px;">
+<h3>2. Spiders</h3>
+<div style="margin-top: 0; font-style: italic; font-size: 0.9em;">Towards earthquake protection of suspended bridges with spiders web</div>
+<p>We talked yesterday of taking inspiration of the human brain for computing. But computer science is far from the only field to take inspiration from nature. Indeed, natural structure, materials, and machineries are often the result of millions of years of evolution, which inevitably leads to the most efficient solutions. </p>
+<p>Another wonder of the nature are spider webs. They are high-performance structures unmatched anywhere else. For comparison, we define the toughness of a material as the area under its stress (i.e. strength) v.s. strain (i.e. extensibility) curve until it breaks. This quantifies the energy required to snap the material. The silk of the <em>Areneus</em> has a toughness of 150 MJ.m<sup>-3</sup> versus 25 MJ.m<sup>-3</sup> for carbon fibre [<a href="#R07">7</a>].</p>
+<p>The power spiders' silk can be understood as it is their only survival advantage: they are prone to physical damage, breathe through lungs, constantly need high humidity, are wingless and their legs buckle when overused [<a href="#R08">8</a>].</p>
+<p>However, the structure and geometry of spiders web have not been investiguated until 2016, when scientists studied their acoustic properties [<a href="#R09">9</a>]. They show that spider webs could be used to damp low-frequency vibrations, and that tuning their structure allows this property to be fine-tuned.</p>
+<figure>
+<img style="display: block; width: 100%; border-radius: 5pt;" src="../../media/factober/spiderweb_structure.jpg" alt="Structure of spider web used to damp low-frequency oscillations" />
+<figcaption class="no-before">Structure of the spider web investiguated in the paper with its different parameters.</figcaption>
+</figure>
+<p>
+In a crystal, a regular arrengement of atoms, waves cannot propagate freely.
+Whereas in the vacuum, all electromagnetic waves (i.e. light) propagate at the same speed, in a crystal, their speed depends on their wavelength: 
+\( v = f(\lambda) \).
+<br>
+The two are linked by what is called the dispersion relation \( f(\lambda) \).
+</p>
+<p>The exact same applies to mechanical waves, such as sound waves, and their speed is a function of their frequency. In particular, it may happen that the speed of a wave is zero for a range of frequencies. It means that a wave a that wavelength cannot propagate in the structure and this is called a <em>bandgap</em>.</p>
+<p>
+By tuning the ratio of stiffness of the circumferential ligaments \( E_\mathrm{cl} \) and that of the radial ligaments \( E_\mathrm{rl} \), they successfully tuned the band gap frequencies:
+</p>
+<figure>
+<img style="display: block; width: 100%; border-radius: 5pt;" src="../../media/factober/tuned_bandgap.jpg" alt="Structure of spider web used to damp low-frequency oscillations" />
+<figcaption class="no-before">Bandgaps of the structure as a function of the stiffness of the ring resonator and of the radial ligaments.</figcaption>
+</figure>
+<p>They conclude that this study could lead to the development of functional spider-web-structure based materials, for instance to protect suspended bridges from earthquake.</p>
 <hr>
 <h3 id="references">References</h3>
 <ul style="margin-top: 0.5em;">
@@ -91,6 +123,9 @@ This is not because a theory may be wrong that brain-inspired computing must not
 <li id="R06">[6] Marković, D., Mizrahi, A., Querlioz, D., & Grollier, J. (2020). Physics for neuromorphic computing. Nature Reviews Physics, 2(9), 499-510.</li>
 <!-- <li id="R07">[7]Hudachek, L., & Wamsley, E. J. (2023). A Meta-Analysis of the Relation between Dream Content and Memory Consolidation. Sleep, zsad111.</li>
 <li id="R08">[8] Nielsen T. A. (2000). A review of mentation in REM and NREM sleep: "covert" REM sleep as a possible reconciliation of two opposing models. The Behavioral and brain sciences, 23(6), 851–1121.</li> -->
+<li id="R07">[7] Gosline, J. M., Guerette, P. A., Ortlepp, C. S., & Savage, K. N. (1999). The mechanical design of spider silks: from fibroin sequence to mechanical function. Journal of Experimental Biology, 202(23), 3295-3303.</li>
+<li id="R08">[8] Vollrath, F. (2003). Web masters.</li>
+<li id="R09">[9] Miniaci, M., Krushynska, A., Movchan, A. B., Bosia, F., & Pugno, N. M. (2016). Spider web-inspired acoustic metamaterials. Applied Physics Letters, 109(7).</li>
 </ul>
 
   </main>
