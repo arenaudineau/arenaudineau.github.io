@@ -56,8 +56,8 @@ Note that I am a physics student and because of the diversity of words, I may fi
 <ul style="margin-top:0; display: grid; grid-template-columns: repeat(3, 1fr);">
 <li><a href="#D1">1. Dream</a></li>
 <li><a href="#D2">2. Spiders</a></li>
-<!-- <li><a href="#day-3">3. Path</a></li>
-<li><a href="#day-4">4. Dodge</a></li>
+<li><a href="#D3">3. Path</a></li>
+<!-- <li><a href="#day-4">4. Dodge</a></li>
 <li><a href="#day-5">5. Map</a></li>
 <li><a href="#day-6">6. Golden</a></li>
 <li><a href="#day-7">7. Drip</a></li>
@@ -98,7 +98,7 @@ In a crystal, a regular arrangement of atoms, waves cannot propagate freely.
 Whereas in the vacuum, all electromagnetic waves (i.e. light) propagate at the same speed, in a crystal, their speed depends on their wavelength: 
 \( v = f(\lambda) \). This is the dispersion relation.
 </p>
-<p>The exact same applies to mechanical waves, such as sound waves, and their speed is a function of their frequency. In particular, it may happen that the speed of a wave is zero for a range of frequencies. Equivalently, such a wave cannot propagate in the structure and this is called a <em>bandgap</em>.</p>
+<p>The exact same applies to mechanical waves, such as sound waves, and their speed is a function of their frequency. In particular, it may happen that the speed of a wave is not defined for a range of frequencies. Equivalently, such a wave cannot propagate in the structure and this is called a <em>bandgap</em>.</p>
 <p>
 By tuning the ratio of stiffness of the circumferential ligaments \( E_\mathrm{cl} \) over that of the radial ligaments \( E_\mathrm{rl} \), they successfully tuned the band gap frequencies:
 </p>
@@ -107,6 +107,22 @@ By tuning the ratio of stiffness of the circumferential ligaments \( E_\mathrm{c
 <figcaption class="no-before">Bandgaps of the structure as a function of the stiffness of the circumferential ligaments and of the radial ligaments.</figcaption>
 </figure>
 <p>They conclude that this study could lead to the development of functional spider-web-structure based materials, for instance to protect suspended bridges from earthquake.</p>
+<hr>
+<h3 id="D3">3. Path</h3>
+<div style="margin-top: 0; font-style: italic; font-size: 0.9em;">A quantum particle explores every possible paths simulateneously</div>
+<p><em>I dont have much time today, so here are the key points, I will elaborate more this week end, hopefully.</em></p>
+<p><span style="text-decoration: underline;">Lagrangian \( \mathcal{L}(x, \dot{x}) \)</span>: basically the difference between the kinetic energy and the potential energy of a system.</p>
+<p><span style="text-decoration: underline;">Action \( \mathcal{S}[x(t)] \)</span>: the integral of the Lagrangian over time for a given path \( x(t) \).</p>
+<p><span style="text-decoration: underline;">Stationary-action principle</span>: this principle states that classical mechanics always choose the path with a stationary action, i.e. the path with a minimal action.</p>
+<figure>
+<img style="display: block; width: 100%; border-radius: 5pt;" src="../../media/factober/Least_action_principle.svg" alt="Illustration of different path in green. The only path in red is the one with stationary action: i.e. the classical path" />
+<figcaption class="no-before">Illustration of different path a particle could take.<br><span style="font-size: 0.9em">Modified from <a href="https://commons.wikimedia.org/wiki/File:Least_action_principle.svg" target="_blank">Wikimedia Commons</a>.</span></figcaption>
+</figure>
+<p><span style="text-decoration: underline;">Path integral formulation</span>: in the quantum world, we use probabilist tools to describe the objects, and their position. The probability for a particle to be at position \( x_f \) and at time \( t_f \) knowing that it was at \( x_i \) at the time \( t_i \) is written as \(  \langle x_f, t_f | x_i, t_i \rangle \).
+Dirac stated that the probability was analogous to \( \mathrm{e}^{\frac{i}{\hbar} \mathcal{S}[x(t)]} \) [<a href="RXX">X</a>] ; Feynman will show in its thesis that they are proportional [<a href="RXX">X</a>]:
+\[ \langle x_f, t_f | x_i, t_i \rangle = \int \mathcal{D}x(t) \mathrm{e}^{\frac{i}{\hbar} \mathcal{S}[x(t)]}\]
+</p>
+<p>As a comparison with classical mechanics, where we take only a definite path, in quantum mechanics, we integrate over all possible paths: an interpretation is that the quantum particle explore every possible paths, i.e. not only the red from the previous figure, but also the green ones.</p>
 <hr>
 <h3 id="references">References</h3>
 <ul style="margin-top: 0.5em;">
@@ -118,12 +134,13 @@ By tuning the ratio of stiffness of the circumferential ligaments \( E_\mathrm{c
 <li id="R06">[6] Zhao, H., Li, D., & Li, X. (2018). Relationship between dreaming and memory reconsolidation. Brain Science Advances, 4(2), 118-130.</li> -->
 <li id="R04">[4] Crick, F., & Mitchison, G. (1983). The function of dream sleep. Nature, 304(5922), 111-114.</li>
 <li id="R05">[5] Hinton, G. (2022). The forward-forward algorithm: Some preliminary investigations. arXiv preprint arXiv:2212.13345.</li>
-<li id="R06">[6] Marković, D., Mizrahi, A., Querlioz, D., & Grollier, J. (2020). Physics for neuromorphic computing. Nature Reviews Physics, 2(9), 499-510.</li>
+<li id="R06">[6] Marković, M., Mizrahi, A., Querlioz, D., & Grollier, J. (2020). Physics for neuromorphic computing. Nature Reviews Physics, 2(9), 499-510.</li>
 <!-- <li id="R07">[7]Hudachek, L., & Wamsley, E. J. (2023). A Meta-Analysis of the Relation between Dream Content and Memory Consolidation. Sleep, zsad111.</li>
 <li id="R08">[8] Nielsen T. A. (2000). A review of mentation in REM and NREM sleep: "covert" REM sleep as a possible reconciliation of two opposing models. The Behavioral and brain sciences, 23(6), 851–1121.</li> -->
 <li id="R07">[7] Gosline, J. M., Guerette, P. A., Ortlepp, C. S., & Savage, K. N. (1999). The mechanical design of spider silks: from fibroin sequence to mechanical function. Journal of Experimental Biology, 202(23), 3295-3303.</li>
 <li id="R08">[8] Vollrath, F. (2003). Web masters.</li>
 <li id="R09">[9] Miniaci, M., Krushynska, A., Movchan, A. B., Bosia, F., & Pugno, N. M. (2016). Spider web-inspired acoustic metamaterials. Applied Physics Letters, 109(7).</li>
+<li id="RXX">[X] Dirac, P. A. M. (1933). The Lagrangian in quantum mechanics. Physikalische Zeitschirift der Sowjetunion, 3, 312-320.</li>
 </ul>
 
   </main>
