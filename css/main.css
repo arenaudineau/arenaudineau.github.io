@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #90a7be;
+    --bg-color: #afcdea;
 }
 
 @media (min-width: 768px) {
@@ -82,11 +82,11 @@ h1 {
 }
 
 a {
-    color: darkslateblue;
+    color: #8b4000;
 }
 
 a:hover {
-    color: darkslategray;
+    color: #b85601;
 }
 
 h3 {
