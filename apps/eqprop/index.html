@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/reset.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/fonts/fonts.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code" />
+  <link rel="stylesheet" href="https://arenaudineau.github.io/css/main.css" type="text/css" media="screen" />
+
+  
+<title>EqProp</title>
+
+<script src="https://arenaudineau.github.io/scripts/apps/common/p5.min.js"></script>
+<script src="https://arenaudineau.github.io/scripts/apps/eqprop.js"></script>
+<style>
+    body {
+        overflow: hidden
+    }
+
+    #canvas-container {
+        margin: 0 auto;
+        width: -moz-fit-content;
+        width: fit-content;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* https://www.w3schools.com/howto/howto_css_switch.asp */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 18px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 4px;
+        bottom: 3.5px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:not(checked) + .slider {
+        background-color: #f3b821;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(38px);
+        -ms-transform: translateX(38px);
+        transform: translateX(38px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+</style>
+
+</head>
+
+<body>
+  <header>  </header>
+  <main>
+    
+<h1>EqProp Simulation</h1>
+<p>
+    <em>Left Click</em>: Move the mass <br/>
+    <em>Right Click</em>: Clamp the mass <br />
+    <em>Double Click</em>: Reset to position to zero <br />
+</p>
+<p>
+    Free Phase
+    <label class="switch">
+         <input id="phase-switch" type="checkbox" /> 
+         <span class="slider round"></span>
+    </label>
+    Nudge Phase
+</p>
+
+<p>
+    <button id="apply-grad-btn">Apply Gradient</button>
+</p>
+
+<div id="canvas-container" oncontextmenu="return false;"></div>
+
+<ul id="position-list">
+    <!-- <li></li> -->
+</ul>
+
+  </main>
+
+  
+<footer>
+  I need to find what information to write here
+</footer>
+
+</body>
+
+</html>
