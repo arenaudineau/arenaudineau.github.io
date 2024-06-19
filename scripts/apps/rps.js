@@ -268,9 +268,9 @@ let rock_img;
 let paper_img;
 let scissors_img;
 function preload() {
-	rock_img = loadImage('assets/rps/rock.png');
-	paper_img = loadImage('assets/rps/paper.png');
-	scissors_img = loadImage('assets/rps/scissors.png');
+	rock_img = loadImage('../../assets/rps/rock.png');
+	paper_img = loadImage('../../assets/rps/paper.png');
+	scissors_img = loadImage('../../assets/rps/scissors.png');
 }
 
 function draw() {

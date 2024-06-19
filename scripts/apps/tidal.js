@@ -130,7 +130,7 @@ class Planet {
 }
 
 function preload() {
-  moon_img = loadImage('assets/tidal/moon.jpg');
+  moon_img = loadImage('../../assets/tidal/moon.jpg');
 }
 
 function setup() { 
