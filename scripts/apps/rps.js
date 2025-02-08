@@ -20,8 +20,10 @@ const UI_FONT_SIZE = 15;
 
 let MIN_DIM = null;
 
-let TIME = 0;
+let TARGET_TIMER = 0;
 const FIND_TARGET_TIMEOUT = 0.1; // Every 100ms
+const SOUND_TRIGGER_TIMEOUT = 0.1;
+let SOUND_TIMER = 0.;
 
 let rocks = [];
 let papers = [];
@@ -65,7 +67,10 @@ class Entity {
 			this.friend_entities = scissors;
 		}
 
-		TYPE_SOUNDS[this.type].play();
+		if (SOUND_TIMER > SOUND_TRIGGER_TIMEOUT) {
+			TYPE_SOUNDS[this.type].play();
+			SOUND_TIMER = 0.;
+		}
 
 		this.friend_entities.push(this);
 	}
@@ -277,10 +282,11 @@ function preload() {
 function draw() {
 	background(0); // bl4ck
 
-	TIME += deltaTime / 1000;
+	TARGET_TIMER += deltaTime / 1000;
+	SOUND_TIMER += deltaTime / 1000;
 
-	if (TIME > FIND_TARGET_TIMEOUT) {
-		TIME = 0;
+	if (TARGET_TIMER > FIND_TARGET_TIMEOUT) {
+		TARGET_TIMER = 0;
 		forEachEntity((_, ent) => ent.find_target());
 	}
 
@@ -290,8 +296,8 @@ function draw() {
 			ent.update_dir();
 			ent.update_pos(dt);
 		}
-		ent.draw_debug();
-		// ent.draw();
+		// ent.draw_debug();
+		ent.draw();
 	});
 
 	///
