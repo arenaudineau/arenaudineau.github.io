@@ -22,7 +22,7 @@ let MIN_DIM = null;
 
 let TARGET_TIMER = 0;
 const FIND_TARGET_TIMEOUT = 0.1; // Every 100ms
-const SOUND_TRIGGER_TIMEOUT = 0.1;
+const SOUND_TRIGGER_TIMEOUT = 0.03;
 let SOUND_TIMER = 0.;
 
 let rocks = [];
