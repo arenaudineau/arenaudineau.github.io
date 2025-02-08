@@ -8,6 +8,16 @@ const TYPE_COLORS = [
 	[0, 0, 255, 255],
 ]
 
+const PLAY_STATE = 0;
+const PAUSE_STATE = 1;
+const WIN_STATE = 2;
+const INFINITE_PLAY_STATE = 3;
+
+const UI_TEXT_PAD_Y = 20;
+const UI_TEXT_PAD_X = 25;
+const UI_SPACING = 30;
+const UI_FONT_SIZE = 15;
+
 let MIN_DIM = null;
 
 let TIME = 0;
@@ -18,11 +28,11 @@ let papers = [];
 let scissors = [];
 
 let selected_entity = null;
+let state = PLAY_STATE;
+let winner = null;
 
 class Entity {
-	constructor(uid, pos, dir, type) {
-		this.uid = uid;
-
+	constructor(pos, dir, type) {
 		this.pos = pos;
 		this.dir = dir;
 
@@ -55,6 +65,8 @@ class Entity {
 			this.friend_entities = scissors;
 		}
 
+		TYPE_SOUNDS[this.type].play();
+
 		this.friend_entities.push(this);
 	}
 
@@ -73,7 +85,7 @@ class Entity {
 
 		// We only look for the entities that we can kill
 		this.prey_entities.forEach(ent => {
-			if (ent.uid == this.uid) return;
+			if (ent === this) return; // Safeguard, should not happen
 
 			if (this.type == ROCK_TYPE && ent.type != SCISSORS_TYPE) return;
 			if (this.type == PAPER_TYPE && ent.type != ROCK_TYPE) return;
@@ -127,7 +139,7 @@ class Entity {
 	update_dir() {
 		// Avoid friends
 		this.friend_entities.forEach(ent => {
-			if (ent.uid == this.uid) return;
+			if (ent === this) return;
 
 			let dir = p5.Vector.sub(this.pos, ent.pos);
 			if (dir.magSq() < 20 * 20 * 4) {
@@ -182,15 +194,7 @@ class Entity {
 	}
 
 	draw() {
-		if (this.type == ROCK_TYPE) {
-			image(rock_img, this.pos.x - 10, this.pos.y - 10, 20, 20);
-		}
-		else if (this.type == PAPER_TYPE) {
-			image(paper_img, this.pos.x - 10, this.pos.y - 10, 20, 20);
-		}
-		else if (this.type == SCISSORS_TYPE) {
-			image(scissors_img, this.pos.x - 10, this.pos.y - 10, 20, 20);
-		}
+		image(TYPE_IMGS[this.type], this.pos.x - 10, this.pos.y - 10, 20, 20);
 	}
 
 	// Same but using rects instead of imgs
@@ -203,7 +207,7 @@ class Entity {
 	}
 }
 
-function create_entity_in_area(id, pos, radius, type) {
+function create_entity_in_area(pos, radius, type) {
 	let x = random(-radius, radius);
 	let y = random(-radius, radius);
 	let dir_x = random();
@@ -214,29 +218,23 @@ function create_entity_in_area(id, pos, radius, type) {
 
 	const dir = createVector(dir_x, dir_y).normalize();
 
-	return new Entity(id, pos, dir, type);
+	return new Entity(pos, dir, type);
+}
+
+function items() {
+	return [rocks, papers, scissors];
 }
 
 function forEachEntity(fn) {
-	dt = deltaTime;
+	dt = Math.min(100, deltaTime); // To prevent huge movement when tab not focused
 
-	for (let i = 0; i < rocks.length; i++) {
-		if (fn(dt, rocks[i])) {
-			break;
+	items().forEach((it) => {
+		for (let i = 0; i < it.length; i++) {
+			if (fn(dt, it[i])) {
+				break;
+			}
 		}
-	}
-
-	for (let i = 0; i < papers.length; i++) {
-		if (fn(dt, papers[i])) {
-			break;
-		}
-	}
-
-	for (let i = 0; i < scissors.length; i++) {
-		if (fn(dt, scissors[i])) {
-			break;
-		}
-	}
+	});
 }
 
 function setup() {
@@ -249,28 +247,31 @@ function setup() {
 
 	const count = 30;
 
-	for (let i = 0; i < count; i++) {
-		create_entity_in_area(i, createVector(width / 2 - 200, height / 2 - 100), 200, ROCK_TYPE);
-	}
-
-	for (let i = count; i < 2 * count; i++) {
-		create_entity_in_area(i, createVector(width / 2 + 200, height / 2 - 100), 200, SCISSORS_TYPE);
-	}
-
-	for (let i = 2 * count; i < 3 * count; i++) {
-		create_entity_in_area(i, createVector(width / 2, height / 2 + 200), 200, PAPER_TYPE);
+	const X_OFFSETS = [-200, +200, 0];
+	const Y_OFFSETS = [-100, -100, +150];
+	for (let i = 0; i < count * 3; ++i) {
+		const type = Math.floor(i / count);
+		create_entity_in_area(createVector(width / 2 + X_OFFSETS[type], height / 2 + Y_OFFSETS[type]), 200, type);
 	}
 
 	forEachEntity((_, ent) => ent.find_target());
 }
 
-let rock_img;
-let paper_img;
-let scissors_img;
+let TYPE_IMGS;
+let TYPE_SOUNDS;
 function preload() {
-	rock_img = loadImage('../../assets/rps/rock.png');
-	paper_img = loadImage('../../assets/rps/paper.png');
-	scissors_img = loadImage('../../assets/rps/scissors.png');
+	soundFormats("wav");
+	TYPE_IMGS = [
+		loadImage('../../assets/rps/rock.png'),
+		loadImage('../../assets/rps/paper.png'),
+		loadImage('../../assets/rps/scissors.png'),
+	];
+
+	TYPE_SOUNDS = [
+		loadSound('../../assets/rps/rock.wav'),
+		loadSound('../../assets/rps/paper.wav'),
+		loadSound('../../assets/rps/scissors.wav'),
+	];
 }
 
 function draw() {
@@ -284,25 +285,76 @@ function draw() {
 	}
 
 	forEachEntity((dt, ent) => {
-		ent.update_collision();
-		ent.update_dir();
-		ent.update_pos(dt);
-		//ent.draw_debug();
-		ent.draw();
+		if (state !== PAUSE_STATE) {
+			ent.update_collision();
+			ent.update_dir();
+			ent.update_pos(dt);
+		}
+		ent.draw_debug();
+		// ent.draw();
 	});
 
-	/*	forEachEntity((_, ent) => {
-			if (ent.target != null) {
-				line(ent.pos.x, ent.pos.y, ent.target.pos.x, ent.target.pos.y);
-			}
-		});*/
-
+	///
 	if (selected_entity != null) {
 		selected_entity.pos = createVector(mouseX, mouseY);
 	}
+	///
+
+	///
+	let current_max = -1;
+	const its = items();
+	for (let i = 0; i < 3; ++i) {
+		const l = its[i].length;
+		if (l > current_max) {
+			current_max = l;
+			winner = i;
+		}
+	}
+	///
+
+	draw_ui();
+}
+
+function draw_ui() {
+	push();
+	textSize(15);
+	stroke(128);
+	strokeWeight(2);
+	for (const [i, it] of items().entries()) {
+		fill(128);
+		rect(UI_TEXT_PAD_X, 5 + UI_SPACING * i + 1, UI_FONT_SIZE * 3, 20 - 2);
+		fill(255);
+		text(it.length, 30, UI_TEXT_PAD_Y + UI_SPACING * i);
+		text("+", UI_TEXT_PAD_X + UI_FONT_SIZE * 3 + 5, UI_TEXT_PAD_Y + UI_SPACING * i);
+		text("👑", UI_TEXT_PAD_X + UI_FONT_SIZE * 4 + 5, UI_TEXT_PAD_Y + UI_SPACING * winner);
+		noFill();
+		rect(UI_TEXT_PAD_X + UI_FONT_SIZE * 3, 5 + UI_SPACING * i + 1, UI_FONT_SIZE * 1.25, 20 - 2);
+	}
+	pop();
+
+	push();
+	noStroke();
+	for (let i = 0; i < 3; ++i) {
+		// fill(TYPE_COLORS[i]);
+		image(TYPE_IMGS[i], 5, 5 + UI_SPACING * i, 20, 20);
+	}
+	pop();
+
+
 }
 
 function mousePressed() {
+	for (let i = 0; i < 3; ++i) {
+		if (mouseX > UI_TEXT_PAD_X + UI_FONT_SIZE * 3
+			&& mouseX < UI_TEXT_PAD_X + UI_FONT_SIZE * 3 + UI_FONT_SIZE * 1.25
+			&& mouseY > 5 + UI_SPACING * i + 1
+			&& mouseY < 5 + UI_SPACING * i + 1 + (20 - 2)) {
+				create_entity_in_area(createVector(width / 2, height / 2), 200, i);
+
+				state = PLAY_STATE; // If we add a new type, we don't have a winner anymore
+			}
+	}
+
 	forEachEntity((_, ent) => {
 		if (mouseX > ent.pos.x - 15 && mouseX < ent.pos.x + 15 && mouseY > ent.pos.y - 15 && mouseY < ent.pos.y + 15) {
 			ent.prevent_move = true;
